@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 3rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 1rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 1)), url('images/1.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.highlight {
+    color: #ff69b4;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+.date {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    animation: fadeIn 2s ease-out;
+}
+
+.message {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 3rem;
+    animation: fadeIn 2.5s ease-out;
+}
+
+.message p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+blockquote {
+    border-left: 4px solid #ff69b4;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #ff69b4;
+}
+
+.final {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: #ff69b4;
+}
+
+.gallery {
+    margin-top: 3rem;
+    animation: fadeIn 3s ease-out;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Dancing Script', cursive;
+    color: #ff69b4;
+    font-size: 2.5rem;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.photo {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.03);
+}
+
+.photo img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.confetti-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Nouvelle galerie style */
+.gallery {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.memory-book {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.book-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 110%;
+    top: 50%;
+    left: -5%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.prev-btn, .next-btn {
+    background-color: rgba(255, 105, 180, 0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #ff69b4;
+    transform: scale(1.1);
+}
+
+.photo-slider {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.photo-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.8) translateX(100px);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+}
+
+.photo-container.active {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+    pointer-events: all;
+    z-index: 2;
+}
+
+.photo-container.prev {
+    opacity: 0.3;
+    transform: scale(0.8) translateX(-100px);
+    z-index: 1;
+}
+
+.photo-container.next {
+    opacity: 0.3;
+    transform: scale(0.8) translateX(100px);
+    z-index: 1;
+}
+
+.polaroid {
+    background-color: #fff;
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transform: rotate(var(--rotation));
+    transition: transform 0.5s ease;
+    max-width: 85%;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.photo-frame {
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) inset;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+}
+
+.polaroid:hover img {
+    transform: scale(1.05);
+}
+
+.photo-caption {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: #333;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 105, 180, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #ff69b4;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .photo-slider {
+        height: 380px;
+    }
+
+    .polaroid img {
+        height: 250px;
+    }
+
+    .book-controls {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-slider {
+        height: 320px;
+    }
+
+    .polaroid {
+        padding: 1rem 1rem 2rem 1rem;
+    }
+
+    .polaroid img {
+        height: 200px;
+    }
+
+    .photo-caption {
+        font-size: 1rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .date {
+        font-size: 1.2rem;
+    }
+
+    .message {
+        padding: 1.5rem;
+    }
+
+    blockquote {
+        font-size: 1.1rem;
+    }
+
+    .photo {
+        height: auto;
+    }
+
+    .photo img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .photos {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .photo img {
+        height: 150px;
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire Orly!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="confetti-container"></div>
+
+    <header>
+        <h1><span class="highlight">Joyeux Anniversaire</span> Orly!</h1>
+        <p class="date">30 Mai 2025 • 23 ans</p>
+    </header>
+
+    <div class="container">
+        <section class="message">
+            <p>Joyeux anniversaire à toi, ma force tranquille,</p>
+            <p>Depuis qu'on est enfants, je t'ai vue avancer, souvent dans l'ombre, mais toujours debout.</p>
+            <p>La vie ne t'a pas toujours épargnée, mais jamais elle n'a réussi à t'éteindre.</p>
+            <p>Tu brilles. Pas de cette lumière facile qu'on remarque tout de suite, mais de celle qui résiste, qui persiste, même quand tout vacille.</p>
+
+            <blockquote>"À force de briller dans la douleur, on finit par savourer avec douceur le fruit de notre labeur."</blockquote>
+
+            <p>Tu y es encore, dans cette phase où tu brilles dans la douleur.</p>
+            <p>Et je sais, du fond du cœur, que le reste viendra.</p>
+            <p>Tu construis, pierre après pierre, ce qui te reviendra avec justice et beauté.</p>
+            <p>Même si les fruits tardent, ta lumière, elle, ne faiblit pas — et c'est déjà une victoire.</p>
+
+            <p>Je te souhaite un anniversaire à ton image : vrai, profond, et rempli de cette lumière que tu sèmes autour de toi sans même t'en rendre compte.</p>
+            <p>Un jour, tu regarderas derrière toi, et tu comprendras que tu n'as jamais marché pour rien.</p>
+
+            <p class="final">Bon anniversaire, et ne lâche rien. Tu es plus proche que tu ne le crois.</p>
+        </section>
+
+       <section class="gallery">
+            <h2>Souvenirs précieux</h2>
+
+            <div class="memory-book">
+                <div class="book-controls">
+                    <button class="prev-btn" aria-label="Photo précédente">❮</button>
+                    <button class="next-btn" aria-label="Photo suivante">❯</button>
+                </div>
+
+                <div class="photo-slider">
+                    <div class="photo-container active" data-index="0">
+                        <div class="polaroid">
+                            <div class="photo-frame">
+                                <img src="images/1.jpg" alt="Orly">
+                            </div>
+                            <p class="photo-caption">Un moment inoubliable</p>
+                        </div>
+                    </div>
+                    <div class="photo-container" data-index="1">
+                        <div class="polaroid">
+                            <div class="photo-frame">
+                                <img src="images/2.jpg" alt="Orly">
+                            </div>
+                            <p class="photo-caption">Toujours le sourire</p>
+                        </div>
+                    </div>
+                    <div class="photo-container" data-index="2">
+                        <div class="polaroid">
+                            <div class="photo-frame">
+                                <img src="images/3.jpg" alt="Orly">
+                            </div>
+                            <p class="photo-caption"> Le pare choc arrière </p>
+                        </div>
+                    </div>
+                    <div class="photo-container" data-index="3">
+                        <div class="polaroid">
+                            <div class="photo-frame">
+                                <img src="images/4.jpg" alt="Orly">
+                            </div>
+                            <p class="photo-caption">Moments de joie</p>
+                        </div>
+                    </div>
+                    <div class="photo-container" data-index="4">
+                        <div class="polaroid">
+                            <div class="photo-frame">
+                                <img src="images/5.jpg" alt="Orly">
+                            </div>
+                            <p class="photo-caption">Précieux souvenirs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <div class="dot active" data-index="0"></div>
+                    <div class="dot" data-index="1"></div>
+                    <div class="dot" data-index="2"></div>
+                    <div class="dot" data-index="3"></div>
+                    <div class="dot" data-index="4"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
