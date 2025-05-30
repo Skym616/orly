@@ -24,7 +24,7 @@ header {
     padding: 4rem 1rem;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(to bottom, rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 1)), url('images/1.jpg');
+    background: linear-gradient(to bottom, rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 1)), url('1.jpg');
     background-size: cover;
     background-position: center;
     margin-bottom: 3rem;
